@@ -6,7 +6,7 @@ describe('given a number of cents, computes smallest change', {:type => :feature
   it("given a number of cents, computes smallest change") do
     visit('/')
     fill_in('cents' , :with => 3)
-    click_button('submit')
+    click_button('CHANGE YOSELF')
     expect(page).to have_content('3 cents')
   end
 end
@@ -15,7 +15,7 @@ describe('given a number of cents, computes smallest change', {:type => :feature
   it("given a number of cents, computes smallest change") do
     visit('/')
     fill_in('cents' , :with => 92)
-    click_button('submit')
+    click_button('CHANGE YOSELF')
     expect(page).to have_content('3 quarters, 1 dime, 1 nickle, 2 pennies')
   end
 end

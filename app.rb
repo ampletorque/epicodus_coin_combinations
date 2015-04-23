@@ -1,13 +1,12 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/coin')
-also_reload('lib/*')
 
 get('/') do
   erb(:index)
 end
 
 get('/result') do
-  @result = params.fetch('coin').coin()
+  @result = params.fetch('cents').coin()
   erb(:result)
 end

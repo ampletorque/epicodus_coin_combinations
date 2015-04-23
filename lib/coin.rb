@@ -1,20 +1,31 @@
 class Fixnum
   define_method(:coin) do
+    remainder = self
     output = ""
     if (quarters = self./(25).floor()) > 0
-      output = quarters.to_s().concat(" quarters, ")
+      output = quarters.to_s().concat(" quarters")
       if (remainder = self.%(25)) == 0
         return output
+      else (output = output.concat(", "))
       end
     end
-    dimes = remainder./(10).floor()
-    remainder = remainder.%(10)
-    output = output.concat(dimes.to_s().concat(" dimes, "))
-    nickels = remainder./(5).floor()
-    remainder = remainder.%(5)
-    output = output.concat(nickels.to_s().concat(" nickels, "))
-    pennies = remainder
-    output = output.concat(pennies.to_s().concat(" pennies"))
+
+    if (dimes = remainder./(10).floor()) > 0
+      output = output.concat(dimes.to_s().concat(" dimes"))
+      if (remainder = remainder.%(10)) == 0
+        return output
+      else (output = output.concat(", "))
+      end
+    end
+    if (nickels = remainder./(5).floor()) > 0
+      output = output.concat(nickels.to_s().concat(" nickels"))
+      if (remainder = remainder.%(5)) == 0
+        return output
+      else (output == output.concat(", "))
+      end
+    end
+
+    output = output.concat(remainder.to_s().concat(" pennies"))
 #    pennies = self.%(1).to_s()
 #    output = pennies.concat(" pennies")
   end
