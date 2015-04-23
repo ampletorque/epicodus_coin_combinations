@@ -16,7 +16,7 @@ class String
 
     if (dimes = remainder./(10).floor()) > 0
       if dimes == 1
-        output = output.concat(dimes.to_s().concat(" dime")
+        output = output.concat(dimes.to_s().concat(" dime"))
       else
         output = output.concat(dimes.to_s().concat(" dimes"))
       end
@@ -27,7 +27,7 @@ class String
     end
     if (nickels = remainder./(5).floor()) > 0
       if nickels == 1
-        output = output.concat(nickels.to_s()concat(" nickel")
+        output = output.concat(nickels.to_s().concat(" nickel"))
       else
         output = output.concat(nickels.to_s().concat(" nickels"))
       end
@@ -38,7 +38,7 @@ class String
     end
 
     if remainder == 1
-      output = output.concat(remainder.to_s().concat(" penny")
+      output = output.concat(remainder.to_s().concat(" penny"))
     else
       output = output.concat(remainder.to_s().concat(" pennies"))
     end
