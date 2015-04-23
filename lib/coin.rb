@@ -1,10 +1,10 @@
-class Fixnum
+class String
   define_method(:coin) do
-    remainder = self
+    remainder = self.to_i()
     output = ""
-    if (quarters = self./(25).floor()) > 0
+    if (quarters = remainder./(25).floor()) > 0
       output = quarters.to_s().concat(" quarters")
-      if (remainder = self.%(25)) == 0
+      if (remainder = remainder.%(25)) == 0
         return output
       else (output = output.concat(", "))
       end
